@@ -1,0 +1,17 @@
+<ion-view view-title="Test">
+    <ion-content>
+        <ion-refresher
+        pulling-text="Pull to refresh..."
+        on-refresh="refresh()">
+        </ion-refresher>
+
+        <ion-list>
+            <ion-item ng-repeat="transaction in transactions" ng-click="showTransaction(transaction)">
+                {{ transaction.name }}
+                <span class="amount">{{ transaction.amount }}</span>
+            </ion-item>
+            <ion-item><a class="button button-positive" href="#/report/"> Report</a></ion-item>
+        </ion-list>
+    </ion-content>
+
+</ion-view>

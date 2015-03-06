@@ -1,0 +1,12 @@
+2015-03-06 11:30:13.824 narwhal-client[42261:20260664] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/davidgorges/Library/Developer/CoreSimulator/Devices/AF9C8A71-2089-4616-91EC-D620C7D0B562/data/Containers/Data/Application/90AF8E54-634B-41BD-BBCA-1711F974BE49/Library/Cookies/Cookies.binarycookies
+2015-03-06 11:30:14.138 narwhal-client[42261:20260664] Apache Cordova native platform version 3.8.0 is starting.
+2015-03-06 11:30:14.139 narwhal-client[42261:20260664] Multi-tasking -> Device: YES, App: YES
+2015-03-06 11:30:14.155 narwhal-client[42261:20260664] Unlimited access to network resources
+2015-03-06 11:30:15.526 narwhal-client[42261:20260664] Resetting plugins due to page load.
+2015-03-06 11:30:15.935 narwhal-client[42261:20260664] Finished load of: file:///Users/davidgorges/Library/Developer/CoreSimulator/Devices/AF9C8A71-2089-4616-91EC-D620C7D0B562/data/Containers/Bundle/Application/3C86FAFA-9AF9-4A1E-B651-F2222E547B28/narwhal-client.app/www/index.html#/
+2015-03-06 11:50:00.256 narwhal-client[1241:10372] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/davidgorges/Library/Developer/CoreSimulator/Devices/AF9C8A71-2089-4616-91EC-D620C7D0B562/data/Containers/Data/Application/1976173E-6576-4B84-8F90-275AC2DD0D3B/Library/Cookies/Cookies.binarycookies
+2015-03-06 11:50:00.539 narwhal-client[1241:10372] Apache Cordova native platform version 3.8.0 is starting.
+2015-03-06 11:50:00.539 narwhal-client[1241:10372] Multi-tasking -> Device: YES, App: YES
+2015-03-06 11:50:00.562 narwhal-client[1241:10372] Unlimited access to network resources
+2015-03-06 11:50:01.432 narwhal-client[1241:10372] Resetting plugins due to page load.
+2015-03-06 11:50:01.803 narwhal-client[1241:10372] Finished load of: file:///Users/davidgorges/Library/Developer/CoreSimulator/Devices/AF9C8A71-2089-4616-91EC-D620C7D0B562/data/Containers/Bundle/Application/205E0081-E2CA-4217-9BAB-2423E66B3C5F/narwhal-client.app/www/index.html#/
