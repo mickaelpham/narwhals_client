@@ -1,7 +1,6 @@
 # Mac OS X specific files
 .DS_Store
 node_modules/
-platforms/
 plugins/
 tmp/
 platforms/ios/build

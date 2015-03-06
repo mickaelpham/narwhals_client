@@ -2,13 +2,15 @@
 
 Capital One Hackathon, March 2015
 
+![Preview](docs/narwhal.gif)
 ## Prerequisites
 
 * npm
 * Xcode (for iOS platform)
 * gulp
 * bower
-
+* Apache Cordova (``$ npm install --global cordova``)
+* iOS Simulator (``$ npm install --global ios-sim``)
 
 
 
