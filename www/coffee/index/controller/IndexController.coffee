@@ -11,6 +11,9 @@ class IndexController extends BaseController
   refresh: ()->
     @loadTransactions()
     @$scope.$broadcast('scroll.refreshComplete')
+    setTimeout(Mi.motion.fadeSlideInRight({
+      selector: '.list > *'
+    }), 10)
 
   loadTransactions: ()=>
     @$scope.transactions = [

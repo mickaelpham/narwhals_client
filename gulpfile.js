@@ -10,6 +10,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 var debug = require('gulp-debug');
 var sh = require('shelljs');
+var gulpif = require('gulp-if');
 
 var paths = {
     sass: ['./scss/**/*.scss'],
@@ -19,6 +20,13 @@ var paths = {
         './www/coffee/*/*.coffee',
         './www/coffee/*/*/**/*.coffee'
     ],
+    cssImports: [
+        './www/css/vendor/material-ionic.css',
+    ],
+    jsImports: [
+        './www/js/vendor/material-ionic.js',
+        './www/lib/Waves/src/js/waves.js',
+    ]
 };
 
 var dist = {
@@ -27,12 +35,14 @@ var dist = {
 
 var tempDir = './tmp/';
 
-gulp.task('default', ['sass', 'coffee']);
+gulp.task('default', ['styles', 'scripts']);
 
-gulp.task('sass', function (done) {
-    gulp.src('./scss/ionic.app.scss')
-        .pipe(debug({title: 'SASS Files'}))
-        .pipe(sass())
+gulp.task('styles', function (done) {
+    srcDirs = ['./scss/ionic.app.scss'].concat(paths.cssImports);
+    gulp.src(srcDirs)
+        .pipe(debug({title: 'Styles'}))
+        .pipe(gulpif(/[.]scss/, sass()))
+        .pipe(concat('narwhal.css'))
         .pipe(gulp.dest('./www/css/'))
         .pipe(minifyCss({
             keepSpecialComments: 0
@@ -42,11 +52,12 @@ gulp.task('sass', function (done) {
         .on('end', done);
 });
 
-gulp.task('coffee', function () {
-    gulp.src(paths.coffee)
+gulp.task('scripts', function () {
+    srcDirs = paths.coffee.concat(paths.jsImports);
+    gulp.src(srcDirs)
         .pipe(debug({title: 'Coffee Files'}))
         .pipe(sourcemaps.init())
-        .pipe(coffee())
+        .pipe(gulpif(/[.]coffee$/, coffee()))
         .pipe(gulp.dest(tempDir + '/js'))
         .pipe(concat('narwhal.js'))
         .pipe(sourcemaps.write())
@@ -56,9 +67,10 @@ gulp.task('coffee', function () {
         .pipe(gulp.dest(dist.js));
 });
 
-gulp.task('watch', function () {
-    gulp.watch(paths.sass, ['sass']);
-    gulp.watch(paths.coffee, ['coffee']);
+
+gulp.task('watch', ['styles', 'scripts'], function () {
+    gulp.watch(paths.sass.concat(paths.cssImports), ['styles']);
+    gulp.watch(paths.coffee.concat(paths.jsImports), ['scripts']);
 });
 
 gulp.task('install', ['git-check'], function () {

@@ -50,5 +50,6 @@ Given you have a [proper browser](https://www.google.com/chrome/) installed, you
     $ ionic serve
 ````
 
+## Add iOS Device
 
     
