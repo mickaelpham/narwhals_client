@@ -6,7 +6,7 @@ class IndexController extends BaseController
   @inject '$scope', '$http', '$state', '$rootScope'
 
   initialize: ()=>
-    console.log this
+    @loadTransactions()
 
   refresh: ()->
     @loadTransactions()
