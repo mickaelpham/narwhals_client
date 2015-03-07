@@ -9123,3 +9123,20 @@ a.button {
 /* Firefox Bug: link not triggered */
 a.waves-effect .waves-ripple {
   z-index: -1; }
+
+.narwhals-logo {
+  background-image: url(/img/narwhals.png);
+  width: 154px;
+  height: 228px; }
+
+.login .item .item {
+  background-color: transparent !important;
+  border: none !important; }
+.login .item .item-input {
+  padding: 30px 0 0 !important; }
+
+.recurring .spending-bar {
+  background-color: #212121;
+  color: #efefef;
+  padding: 4px;
+  text-align: center; }

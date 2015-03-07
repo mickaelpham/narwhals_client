@@ -16,3 +16,28 @@
 2015-03-06 14:47:38.179 narwhal-client[5817:126921] Unlimited access to network resources
 2015-03-06 14:47:38.528 narwhal-client[5817:126921] Resetting plugins due to page load.
 2015-03-06 14:47:38.820 narwhal-client[5817:126921] Finished load of: file:///Users/davidgorges/Library/Developer/CoreSimulator/Devices/AF9C8A71-2089-4616-91EC-D620C7D0B562/data/Containers/Bundle/Application/5A56BA2B-A309-4236-8896-DD5B9AB73AF1/narwhal-client.app/www/index.html#/
+2015-03-07 11:26:56.514 narwhal-client[11686:293557] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/davidgorges/Library/Developer/CoreSimulator/Devices/AF9C8A71-2089-4616-91EC-D620C7D0B562/data/Containers/Data/Application/C1EA66DE-430D-4E46-A923-89DE80EB493E/Library/Cookies/Cookies.binarycookies
+2015-03-07 11:26:56.780 narwhal-client[11686:293557] Apache Cordova native platform version 3.8.0 is starting.
+2015-03-07 11:26:56.780 narwhal-client[11686:293557] Multi-tasking -> Device: YES, App: YES
+2015-03-07 11:26:56.795 narwhal-client[11686:293557] Unlimited access to network resources
+2015-03-07 11:26:57.574 narwhal-client[11686:293557] Resetting plugins due to page load.
+2015-03-07 11:26:57.883 narwhal-client[11686:293557] Finished load of: file:///Users/davidgorges/Library/Developer/CoreSimulator/Devices/AF9C8A71-2089-4616-91EC-D620C7D0B562/data/Containers/Bundle/Application/7912C5D9-464D-4738-93E5-BA9D13D7E9C1/narwhal-client.app/www/index.html
+2015-03-07 11:27:05.472 narwhal-client[11877:294094] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/davidgorges/Library/Developer/CoreSimulator/Devices/AF9C8A71-2089-4616-91EC-D620C7D0B562/data/Containers/Data/Application/6130F197-DB74-4013-A91B-30018438782B/Library/Cookies/Cookies.binarycookies
+2015-03-07 11:27:05.578 narwhal-client[11877:294094] Apache Cordova native platform version 3.8.0 is starting.
+2015-03-07 11:27:05.579 narwhal-client[11877:294094] Multi-tasking -> Device: YES, App: YES
+2015-03-07 11:27:05.580 narwhal-client[11877:294094] Unlimited access to network resources
+2015-03-07 11:27:05.871 narwhal-client[11877:294094] Resetting plugins due to page load.
+2015-03-07 11:27:06.023 narwhal-client[11877:294094] Finished load of: file:///Users/davidgorges/Library/Developer/CoreSimulator/Devices/AF9C8A71-2089-4616-91EC-D620C7D0B562/data/Containers/Bundle/Application/F8D4F973-80EC-4862-9251-24FDF5E64F92/narwhal-client.app/www/index.html
+2015-03-07 11:27:25.041 narwhal-client[12112:295291] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/davidgorges/Library/Developer/CoreSimulator/Devices/AF9C8A71-2089-4616-91EC-D620C7D0B562/data/Containers/Data/Application/1CDC5A7C-E431-40D9-A9FC-3A6F017B8C9A/Library/Cookies/Cookies.binarycookies
+2015-03-07 11:27:25.115 narwhal-client[12112:295291] Apache Cordova native platform version 3.8.0 is starting.
+2015-03-07 11:27:25.115 narwhal-client[12112:295291] Multi-tasking -> Device: YES, App: YES
+2015-03-07 11:27:25.116 narwhal-client[12112:295291] Unlimited access to network resources
+2015-03-07 11:27:25.358 narwhal-client[12112:295291] Resetting plugins due to page load.
+2015-03-07 11:27:25.519 narwhal-client[12112:295291] Finished load of: file:///Users/davidgorges/Library/Developer/CoreSimulator/Devices/AF9C8A71-2089-4616-91EC-D620C7D0B562/data/Containers/Bundle/Application/922806CC-84A3-4E41-82D9-403643A7A756/narwhal-client.app/www/index.html
+2015-03-07 11:28:32.767 narwhal-client[12112:296723] Terminating since there is no system app.
+2015-03-07 11:41:34.112 narwhal-client[12982:308774] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/davidgorges/Library/Developer/CoreSimulator/Devices/AF9C8A71-2089-4616-91EC-D620C7D0B562/data/Containers/Data/Application/845647D7-A306-4FF9-B93A-3243110A5B30/Library/Cookies/Cookies.binarycookies
+2015-03-07 11:41:34.353 narwhal-client[12982:308774] Apache Cordova native platform version 3.8.0 is starting.
+2015-03-07 11:41:34.353 narwhal-client[12982:308774] Multi-tasking -> Device: YES, App: YES
+2015-03-07 11:41:34.368 narwhal-client[12982:308774] Unlimited access to network resources
+2015-03-07 11:41:34.994 narwhal-client[12982:308774] Resetting plugins due to page load.
+2015-03-07 11:41:35.280 narwhal-client[12982:308774] Finished load of: file:///Users/davidgorges/Library/Developer/CoreSimulator/Devices/AF9C8A71-2089-4616-91EC-D620C7D0B562/data/Containers/Bundle/Application/23DDA3D6-C628-4A9A-83A9-C05FD40718E6/narwhal-client.app/www/index.html#/

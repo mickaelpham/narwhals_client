@@ -1,4 +1,4 @@
-reportModule = angular.module('narwhale.report', [])
+reportModule = angular.module('narwhal.report', [])
 
 reportModule.config ($stateProvider)->
   $stateProvider

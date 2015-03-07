@@ -4,28 +4,32 @@
 # the 2nd parameter is an array of 'requires'
 # 'starter.services' is found in services.js
 # 'starter.controllers' is found in controllers.js
-app = angular.module('narwhale', [
+app = angular.module('narwhal', [
   'ionic'
-  'narwhale.report'
-  'narwhale.recurring'
+  'narwhal.login'
+  'narwhal.report'
+  'narwhal.recurring'
+  'ui.router'
 ])
 
 app.run(($ionicPlatform, $rootScope) ->
   $ionicPlatform.ready ->
     console.log "Ready!"
-    # Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    # for form inputs)
     if window.cordova and window.cordova.plugins.Keyboard
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar true
     if window.StatusBar
       # org.apache.cordova.statusbar required
       StatusBar.styleDefault()
 
+
   $rootScope.$on '$stateChangeStart', (event, toState, toParams, fromState, fromParams) ->
     console.log "Changed route to #{toState.url}"
+    console.log "Changed route to #{toState.name}"
   $rootScope.$on '$stateChangeError', (event, toState, toParams, fromState, fromParams, error)->
     console.error 'Could not change state'
     console.error error
+  $rootScope.$on '$stateChangeSuccess', (event, toState, toParams, fromState, fromParams)->
+    console.log 'Successfuly changed state'
 
 )
 
@@ -40,4 +44,6 @@ app.config ($stateProvider, $urlRouterProvider) ->
     templateUrl: 'templates/index.html')
 
   $urlRouterProvider.otherwise '/'
+
+
   return

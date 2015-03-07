@@ -1,4 +1,4 @@
-recurringModule = angular.module('narwhale.recurring', [])
+recurringModule = angular.module('narwhal.recurring', [])
 
 recurringModule.config ($stateProvider)->
   $stateProvider

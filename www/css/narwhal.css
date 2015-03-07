@@ -9134,3 +9134,9 @@ a.waves-effect .waves-ripple {
   border: none !important; }
 .login .item .item-input {
   padding: 30px 0 0 !important; }
+
+.recurring .spending-bar {
+  background-color: #212121;
+  color: #efefef;
+  padding: 4px;
+  text-align: center; }

@@ -1,16 +1,25 @@
 <ion-view view-title="Recurring">
-    <ion-content class="padding">
-        <h2>{{ transaction.name }}</h2>
 
-       <span>I go there</span>
+<div class="content has-header recurring">
+    <div class="hero has-mask slide-up" style="background-image: url('./img/fastfood.jpg');">
+        <div class="content">
+            <div class="avatar" style="background-image: url('./img/food-icon.png');"></div>
+            <h3><a class="light">{{ transaction.name }}</a></h3>
+            <h4>Fast Food</h4>
+        </div>
+    </div>
+    <div class="spending-bar">
+        You spend <span class="amount">$ 132</span> in the last <span class="timerange">3 months</span>
+    </div>
+    <h4 class="positive content padding double-padding-x">My Spending</h4>
+    <span>I go there</span>
 
-        <input type="text"/> times
-        per
-        <ion-radio>Year</ion-radio>
-        <ion-radio>Month</ion-radio>
-        <ion-radio>Week</ion-radio>
-        <ion-radio>Day</ion-radio>
-
-        <a class="button icon icon-right ion-chevron-right" href="#/report/">Calculate</a>
-    </ion-content>
+    <input type="text"/> times
+    per
+    <ion-radio>Year</ion-radio>
+    <ion-radio>Month</ion-radio>
+    <ion-radio>Week</ion-radio>
+    <ion-radio>Day</ion-radio>
+    <a class="button icon icon-right ion-chevron-right" href="#/report/">Calculate</a>
+</div>
 </ion-view>

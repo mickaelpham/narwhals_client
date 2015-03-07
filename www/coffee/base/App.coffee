@@ -43,4 +43,7 @@ app.config ($stateProvider, $urlRouterProvider) ->
     controller: 'IndexController'
     templateUrl: 'templates/index.html')
 
+  $urlRouterProvider.otherwise '/'
+
+
   return

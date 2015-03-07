@@ -26,6 +26,7 @@ class @BaseController
   @inject: (args...) ->
     @$inject = args
 
+
   constructor: (args...) ->
     for key, index in @constructor.$inject
       @[key] = args[index]

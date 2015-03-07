@@ -1,4 +1,11 @@
 <ion-view view-title="Review your transactions">
+
+    <ion-nav-buttons side="primary">
+        <button class="button button-calm" ng-click="logout()" >
+            Logout
+        </button>
+    </ion-nav-buttons>
+
     <ion-content class="has-header">
         <ion-refresher
                 pulling-text="Pull to refresh..."
@@ -6,11 +13,11 @@
         </ion-refresher>
 
         <div class="list animate-fade-slide-in-right">
-            <a class="item" ng-if="transactions.length < 1">
+            <a class="item" ng-show="transactions.length < 1">
                 Connect
             </a>
             <a class="item item-avatar item-icon-right waves-effect waves-button waves-dark" ng-repeat="transaction in transactions" ng-click="showTransaction(transaction)">
-                <img src="http://lorempixel.com/100/100/">
+                <img src="./img/food-icon.png">
 
                 <h2>{{ transaction.name }}</h2>
                 <p>$ {{ transaction.amount }}</p>

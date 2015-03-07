@@ -8,3 +8,7 @@ class RecurringController extends BaseController
   initialize: ()->
     @$scope.hello = "World"
     @$scope.transaction = @currentTransaction
+    Mi.motion.slideUp({
+      selector: '.slide-up'
+    })
+

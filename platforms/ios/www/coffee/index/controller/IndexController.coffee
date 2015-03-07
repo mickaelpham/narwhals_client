@@ -1,4 +1,4 @@
-app = angular.module 'narwhale'
+app = angular.module 'narwhal'
 
 class IndexController extends BaseController
 
@@ -6,13 +6,17 @@ class IndexController extends BaseController
   @inject '$scope', '$http', '$state', '$rootScope'
 
   initialize: ()=>
-    console.log this
+    @$scope.transactions = []
+    @loadTransactions()
+
+  logout: ()->
+    @$state.go 'login'
 
   refresh: ()->
     @loadTransactions()
     @$scope.$broadcast('scroll.refreshComplete')
     setTimeout(Mi.motion.fadeSlideInRight({
-      selector: '.list > *'
+      selector: '.animate-fade-slide-in-right > *'
     }), 10)
 
   loadTransactions: ()=>

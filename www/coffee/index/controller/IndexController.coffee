@@ -6,13 +6,17 @@ class IndexController extends BaseController
   @inject '$scope', '$http', '$state', '$rootScope'
 
   initialize: ()=>
+    @$scope.transactions = []
     @loadTransactions()
+
+  logout: ()->
+    @$state.go 'login'
 
   refresh: ()->
     @loadTransactions()
     @$scope.$broadcast('scroll.refreshComplete')
     setTimeout(Mi.motion.fadeSlideInRight({
-      selector: '.list > *'
+      selector: '.animate-fade-slide-in-right > *'
     }), 10)
 
   loadTransactions: ()=>
