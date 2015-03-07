@@ -21,6 +21,7 @@ app.run(($ionicPlatform, $rootScope) ->
       # org.apache.cordova.statusbar required
       StatusBar.styleDefault()
 
+
   $rootScope.$on '$stateChangeStart', (event, toState, toParams, fromState, fromParams) ->
     console.log "Changed route to #{toState.url}"
     console.log "Changed route to #{toState.name}"

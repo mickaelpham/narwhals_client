@@ -1,6 +1,5 @@
 <ion-view hide-nav-bar="true">
-
-    <div class="ionic login animate-pan-in-left" style="background-image: url('/img/mountains.jpg');" ng-app="login">
+    <div class="ionic login animate-pan-in-left login" style="background-image: url('/img/mountains.jpg');" ng-app="login">
         <div class="hero no-header flat">
             <div class="content">
                 <i class="narwhals-logo icon hero-icon royal-bg"></i>
@@ -9,11 +8,11 @@
             </div>
         </div>
         <div class="list">
-            <ion-md-input placeholder="Username" highlight-color="balanced" type="text"></ion-md-input>
-            <ion-md-input placeholder="Password" highlight-color="energized" type="password"></ion-md-input>
+            <ion-md-input placeholder="Username" highlight-color="balanced" type="text" ng-model="username"></ion-md-input>
+            <ion-md-input placeholder="Password" highlight-color="energized" type="password" ng-model="password"></ion-md-input>
         </div>
         <div class="padding">
-            <button class="button button-block button-positive waves-effect waves-light">Login</button>
+            <button class="button button-block button-positive waves-effect waves-light" ng-click="login()">Login</button>
         </div>
     </div>
 

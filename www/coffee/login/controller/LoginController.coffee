@@ -3,13 +3,13 @@ loginModule = angular.module 'narwhal.login'
 class LoginController extends BaseController
 
   @register loginModule
-  @inject '$scope', '$http'
+  @inject '$scope', '$http', 'User'
+
+  login: ()=>
+    @User.login(@$scope.username, @$scope.password)
 
 
-  login: ()->
-    @$http.post 'http://heroku.com', { username: 'test', password: 'pass$word' }, ()->
-      console.log "Success!"
-
-
-  initialize: ()->
+  initialize: ()=>
+    @$scope.username = ''
+    @$scope.password = ''
 
