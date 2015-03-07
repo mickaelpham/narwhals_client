@@ -10,6 +10,7 @@ app = angular.module('narwhal', [
   'narwhal.report'
   'narwhal.recurring'
   'ui.router'
+  'angular-locker'
 ])
 
 app.run(($ionicPlatform, $rootScope) ->

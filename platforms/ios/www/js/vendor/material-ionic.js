@@ -338,6 +338,7 @@ Mi = (function() {
         }
 
         var animateSlideUpDom = document.querySelectorAll(options.selector);
+        console.log(animateSlideUpDom);
         var elementAnimationCount = animateSlideUpDom.length;
         for (var i = 0; i < elementAnimationCount; i++) {
             var element = animateSlideUpDom[i];

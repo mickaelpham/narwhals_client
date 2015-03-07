@@ -9,17 +9,17 @@ Mi = (function() {
 
     /*============================================================================*/
     /* Library Constants (EXPORT)
-    /============================================================================*/
+     /============================================================================*/
 
     var version = '0.0.1';
 
 
     /*============================================================================*/
     /* HELPERS (non-exports)
-    /=============================================================================*
-    /   Abstract common lookups and manipulations in case better alternatives
-    /   arise or future cross-platform differences warrant separate handling
-    /=============================================================================*/
+     /=============================================================================*
+     /   Abstract common lookups and manipulations in case better alternatives
+     /   arise or future cross-platform differences warrant separate handling
+     /=============================================================================*/
 
     function getViewportHeight() {
         return window.innerHeight;
@@ -32,9 +32,9 @@ Mi = (function() {
 
     /*============================================================================*/
     /* MOTION (EXPORT)
-    /=============================================================================*
-    /   Animation methods for the library
-    /=============================================================================*/
+     /=============================================================================*
+     /   Animation methods for the library
+     /=============================================================================*/
 
     // Hoisting the animation functions into our motion object
     var motion = {
@@ -186,10 +186,8 @@ Mi = (function() {
                 var offset = childOffset.left * options.leftOffsetPercentage + childOffset.top;
                 var delayValue = offset / speed / options.finishDelayThrottle;
                 var delay = parseFloat(delayValue).toFixed(2);
-                //animateFadeSlideInDom[0].className += ' done';
-                animateFadeSlideInDom[i].className += ' done';
-
             }
+            animateFadeSlideInDom[0].className += ' done';
 
         }, speed * options.finishSpeedPercent);
     }
@@ -261,7 +259,10 @@ Mi = (function() {
                 var delayValue = offset / speed / options.finishDelayThrottle;
                 var delay = parseFloat(delayValue).toFixed(2);
             }
-            animateSlideInRightDom.item(0).parentNode.className += ' done';
+            console.log(animateSlideInRightDom);
+            if ( animateSlideInRightDom.length > 0) {
+                animateSlideInRightDom[0].className += ' done';
+            }
 
         }, speed * options.finishSpeedPercent);
     }
@@ -348,7 +349,7 @@ Mi = (function() {
     }
 
     /* Export object
-    /============================================================================*/
+     /============================================================================*/
     return {
         motion: motion,
         version: version

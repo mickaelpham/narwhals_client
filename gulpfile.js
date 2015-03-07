@@ -21,11 +21,11 @@ var paths = {
         './www/coffee/*/*/**/*.coffee'
     ],
     cssImports: [
-        './www/css/vendor/material-ionic.css',
     ],
     jsImports: [
         './www/js/vendor/material-ionic.js',
         './www/lib/Waves/src/js/waves.js',
+        './www/lib/angular-locker/src/angular-locker.js',
     ]
 };
 

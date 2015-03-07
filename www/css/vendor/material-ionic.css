@@ -761,8 +761,8 @@ a.waves-effect .waves-ripple {
     padding: 12px;
 }
 .ionic .list .item.item-gallery {} .ionic .list .item.item-gallery img {
-    width: 100%;
-}
+                                       width: 100%;
+                                   }
 /* Card */
 
 .ionic .card {
@@ -1207,7 +1207,7 @@ a.waves-effect .waves-ripple {
 }
 /* Animated Slide / Fade In */
 
-.ionic .animate-fade-slide-in > * { 
+.ionic .animate-fade-slide-in > * {
     visibility: hidden;
 }
 .ionic .animate-fade-slide-in > * {

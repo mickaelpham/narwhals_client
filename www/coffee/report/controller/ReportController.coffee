@@ -6,9 +6,6 @@ class ReportController extends BaseController
   @inject '$scope'
 
   initialize: ()->
-    @$scope.reports = [{
-      name:'MyReport'
-    }]
     setTimeout( ()->
       Mi.motion.blindsDown({ selector: '.card'})
     , 500)
