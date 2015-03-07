@@ -1,9 +1,9 @@
-reportModule = angular.module 'narwhale.report'
+reportModule = angular.module 'narwhal.report'
 
 class ReportController extends BaseController
 
   @register reportModule
-  @inject '$scope', '$http', '$scope'
+  @inject '$scope'
 
   initialize: ()->
     @$scope.reports = [{

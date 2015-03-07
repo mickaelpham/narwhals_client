@@ -1,4 +1,4 @@
-app = angular.module 'narwhale'
+app = angular.module 'narwhal'
 
 class IndexController extends BaseController
 

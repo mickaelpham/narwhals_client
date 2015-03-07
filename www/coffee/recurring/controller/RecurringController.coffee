@@ -1,4 +1,4 @@
-recurringModule = angular.module 'narwhale.recurring'
+recurringModule = angular.module 'narwhal.recurring'
 
 class RecurringController extends BaseController
 
