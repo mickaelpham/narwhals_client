@@ -9,15 +9,14 @@ class RecurringController extends BaseController
     if !@currentTransaction
       @$ionicViewSwitcher.nextDirection 'back'
       @$state.go 'index'
+    @loadSimilar()
 
   loadSimilar: ()->
-    @scope.similarTransactions = [
-      { amount: 12385232, transaction_time: '2014-03-05' },
-      { amount: 69385232, transaction_time: '2014-07-05' },
-      { amount: 85212332, transaction_time: '2014-09-09' },
-      { amount: 38125232, transaction_time: '2014-09-25' },
-      { amount: 52123832, transaction_time: '2014-09-15' },
-    ]
+    @$scope.loadingSimilar = true
+    @User.getSimilarTransactions(@$rootScope.session_token, @currentTransaction.id).then (result)->
+      @$scope.similarTransactions = result
+      @$scope.loadingSimilar = false
+
 
   showSavings: ()=>
     transactionId = @currentTransaction.id ? '1'
