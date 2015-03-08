@@ -30,4 +30,7 @@
     <feature name="SpinnerDialog">
         <param name="ios-package" value="CDVSpinnerDialog" />
     </feature>
+    <feature name="ActionSheet">
+        <param name="ios-package" value="ActionSheet" />
+    </feature>
 </widget>

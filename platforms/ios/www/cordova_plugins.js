@@ -6,12 +6,20 @@ module.exports = [
         "merges": [
             "window.plugins.spinnerDialog"
         ]
+    },
+    {
+        "file": "plugins/nl.x-services.plugins.actionsheet/www/ActionSheet.js",
+        "id": "nl.x-services.plugins.actionsheet.ActionSheet",
+        "clobbers": [
+            "window.plugins.actionsheet"
+        ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "hu.dpal.phonegap.plugins.SpinnerDialog": "1.3.1"
+    "hu.dpal.phonegap.plugins.SpinnerDialog": "1.3.1",
+    "nl.x-services.plugins.actionsheet": "1.1.4"
 }
 // BOTTOM OF METADATA
 });
