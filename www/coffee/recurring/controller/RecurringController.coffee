@@ -20,6 +20,7 @@ class RecurringController extends BaseController
     if nextTransaction
       @currentTransaction = nextTransaction
       @$rootScope.currentTransaction = @currentTransaction
+      @$scope.isRecurring = false
       @loadSimilar()
       @choseBackgroundImage()
 

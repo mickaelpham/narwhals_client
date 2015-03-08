@@ -7781,5 +7781,13 @@ a.waves-effect .waves-ripple {
   font-size: 48px; }
 
 .recurring .hero {
-  -webkit-transition: background-image 0.2s ease-in-out;
-  transition: background-image 0.2s ease-in-out; }
+  -webkit-transition: background-image 0.6s ease-in-out;
+  transition: background-image 0.6s ease-in-out; }
+  .recurring .hero .spinner {
+    margin: 10px auto 10px auto;
+    position: relative;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease; }
+  .recurring .hero .spinner svg {
+    width: 64px;
+    height: 64px; }

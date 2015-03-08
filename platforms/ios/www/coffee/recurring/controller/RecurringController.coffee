@@ -9,6 +9,7 @@ class RecurringController extends BaseController
     if !@currentTransaction
       @$ionicViewSwitcher.nextDirection 'back'
       @$state.go 'index'
+    @choseBackgroundImage()
     @loadSimilar()
 
   showNext: ()->
@@ -19,11 +20,34 @@ class RecurringController extends BaseController
     if nextTransaction
       @currentTransaction = nextTransaction
       @$rootScope.currentTransaction = @currentTransaction
+      @$scope.isRecurring = false
       @loadSimilar()
+      @choseBackgroundImage()
 
+  choseBackgroundImage: ()->
+    if !@currentTransaction
+      @$scope.backgroundImage = 'unknown.jpg'
+      return
+    bg = 'unknown.jpg'
+    switch @currentTransaction.categorization
+      when 'Unknown' then bg = 'unknown.jpg'
+      when 'Uncategorized' then bg = 'unknown.jpg'
+      when 'Auto Payment' then bg = 'unknown.jpg'
+      when 'Gas & Fuel' then bg = 'gas.jpg'
+      when 'Check' then bg = 'check.jpg'
+      when 'Shopping' then bg = 'shopping.jpg'
+      when 'Groceries' then bg = 'groceries.jpg'
+      when 'Bank Fee' then bg = 'atm.jpg'
+      when 'Personal Care' then bg = 'personalcare.jpg'
+      when 'Home Improvement' then bg = 'home-improvement.jpg'
+      when 'Auto Insurance' then bg = 'car-insurance.jpg'
+    console.log  @currentTransaction.categorization
+    @$scope.backgroundImage = bg
 
   loadSimilar: ()=>
     @$scope.loadingSimilar = true
+    if !@currentTransaction
+      return
     @User.getSimilarTransactions(@$rootScope.session_token, @currentTransaction.id).then (result)=>
       @$scope.similarTransactions = result.data
       @$scope.loadingSimilar = false

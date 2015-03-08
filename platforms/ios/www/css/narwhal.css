@@ -7746,10 +7746,6 @@ a.waves-effect .waves-ripple {
   color: #efefef;
   padding: 4px;
   text-align: center; }
-.recurring .hero {
-  height: 180px !important; }
-  .recurring .hero.slide-up {
-    height: 100%; }
 .recurring .frequency-container .frequency-input {
   background-color: #f7f7f7;
   border-color: #efefef;
@@ -7767,6 +7763,23 @@ a.waves-effect .waves-ripple {
     border-color: #efefef;
     border-radius: 3px;
     border-style: solid; }
+.recurring h3 {
+  padding-top: 10px;
+  padding-bottom: 10px; }
+.recurring #similarTransactionListContainer {
+  padding: 0px; }
+  .recurring #similarTransactionListContainer a {
+    background-color: #f7f7f7;
+    border-color: #efefef;
+    border-style: solid;
+    border-width: 1px; }
 .recurring a.calculate-button {
   margin: 14px;
   padding: 4px; }
+
+.spending .amount {
+  font-size: 48px; }
+
+.recurring .hero {
+  -webkit-transition: background-image 0.6s ease-in-out;
+  transition: background-image 0.6s ease-in-out; }

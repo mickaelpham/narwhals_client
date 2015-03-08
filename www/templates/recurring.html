@@ -1,6 +1,5 @@
 <ion-view>
-
-    <div class="content has-header recurring ionic">
+    <ion-content class="has-header  recurring ionic">
         <div class="hero has-mask" ng-style="{'background-image':'url(./img/'+backgroundImage+')'}" on-swipe-left="showNext()">
             <div class="content">
                 <div class="avatar" style="background-image: url('./img/food-icon.png');"></div>
@@ -45,12 +44,12 @@
         </div>
 
         <div class="is-recurring content padding" ng-show="!isRecurring">
-            <h3>Similar Transactions</h3>
-
-            <div class="list" id="similarTransactionListContainer">
+            <h3>Similar</h3>
+            <ion-spinner icon="spiral" ng-show="loadingSimilar"></ion-spinner>
+            <div class="list" id="similarTransactionListContainer" ng-show="!loadingSimilar">
                 <a class="item" ng-repeat="transaction in similarTransactions">
                     {{transaction.merchant}}: ${{transaction.amount / -10000}}
                 </a>
             </div>
-        </div>
+    </ion-content>
 </ion-view>
