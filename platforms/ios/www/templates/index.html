@@ -11,7 +11,7 @@
                 <img src="./img/food-icon.png">
 
                 <h2>{{ transaction.merchant }}</h2>
-                <p>$ {{ transaction.amount / 10000 | number:2 }}</p>
+                <p>$ {{ transaction.amount / 10000 *-1 | number:2 }}</p>
                 <i class="icon ion-stats-bars muted"></i>
             </a>
         </div>

@@ -10,6 +10,7 @@ class RecurringController extends BaseController
       @$ionicViewSwitcher.nextDirection 'back'
       @$state.go 'index'
     @choseBackgroundImage()
+    @calculateYearlySpending()
     @loadSimilar()
 
   showNext: ()->
@@ -23,6 +24,17 @@ class RecurringController extends BaseController
       @$scope.isRecurring = false
       @loadSimilar()
       @choseBackgroundImage()
+      @calculateYearlySpending()
+
+  calculateYearlySpending: ()->
+    if !@currentTransaction
+      @$scope.yearlySpending = 0
+      return
+    @$scope.yearlySpending = @currentTransaction.amount
+    if !@$scope.similarTransactions
+      return
+    for transaction in @$scope.similarTransactions
+      @$scope.yearlySpending += transaction.amount
 
   choseBackgroundImage: ()->
     if !@currentTransaction
@@ -41,7 +53,6 @@ class RecurringController extends BaseController
       when 'Personal Care' then bg = 'personalcare.jpg'
       when 'Home Improvement' then bg = 'home-improvement.jpg'
       when 'Auto Insurance' then bg = 'car-insurance.jpg'
-    console.log  @currentTransaction.categorization
     @$scope.backgroundImage = bg
 
   loadSimilar: ()=>
@@ -51,6 +62,7 @@ class RecurringController extends BaseController
     @User.getSimilarTransactions(@$rootScope.session_token, @currentTransaction.id).then (result)=>
       @$scope.similarTransactions = result.data
       @$scope.loadingSimilar = false
+      @calculateYearlySpending()
 
   showSavings: ()=>
     transactionId = @currentTransaction.id ? '1'

@@ -1,6 +1,5 @@
 <ion-view>
-
-    <div class="content has-header recurring ionic">
+    <ion-content class="has-header  recurring ionic">
         <div class="hero has-mask" ng-style="{'background-image':'url(./img/'+backgroundImage+')'}" on-swipe-left="showNext()">
             <div class="content">
                 <div class="avatar" style="background-image: url('./img/food-icon.png');"></div>
@@ -10,7 +9,7 @@
         </div>
 
         <div class="spending-bar">
-            You spent <span class="amount">$132</span> in the last <span class="timerange">3 months</span>
+            You spent <span class="amount">$ {{ yearlySpending / 10000 *-1| number:0}}</span> in the last <span class="timerange">12 months</span>
         </div>
 
         <div class="content">
@@ -38,19 +37,22 @@
             </div>
 
             <!-- Time interval radio options -->
-            <div class="interval-container">
-                <br>
-                <a class="show-savings button icon icon-right ion-chevron-right" href="#" ng-click="showSavings()">Calculate</a>
+            <div class="row">
+                <div class="col col50">
+                </div>
+                <div class="col col50">
+                    <a class="button button-block button-positive" href="#" ng-click="showSavings()">Calculate</a>
+                </div>
             </div>
         </div>
 
         <div class="is-recurring content padding" ng-show="!isRecurring">
-            <h3>Similar Transactions</h3>
-
-            <div class="list" id="similarTransactionListContainer">
+            <h3>Similar</h3>
+            <ion-spinner icon="spiral" ng-show="loadingSimilar"></ion-spinner>
+            <div class="list" id="similarTransactionListContainer" ng-show="!loadingSimilar">
                 <a class="item" ng-repeat="transaction in similarTransactions">
-                    {{transaction.merchant}}: ${{transaction.amount / -10000}}
+                    {{transaction.merchant}}: ${{transaction.amount / -10000 | number:2}}
                 </a>
             </div>
-        </div>
+    </ion-content>
 </ion-view>
