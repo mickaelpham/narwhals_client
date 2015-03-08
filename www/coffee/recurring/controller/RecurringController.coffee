@@ -11,7 +11,7 @@ class RecurringController extends BaseController
       @$state.go 'index'
 
     @$scope.defaultFrequency = 5
-    @$scope.defaultInterval = "Year"
+    @$scope.defaultInterval = "week"
 
     @$scope.frequencyList = [
       {text: "Week", value: "week"},
