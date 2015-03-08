@@ -10,6 +10,7 @@ class RecurringController extends BaseController
       @$ionicViewSwitcher.nextDirection 'back'
       @$state.go 'index'
     @choseBackgroundImage()
+    @chooseIconImage()
     @calculateYearlySpending()
     @loadSimilar()
 
@@ -54,6 +55,23 @@ class RecurringController extends BaseController
       when 'Home Improvement' then bg = 'home-improvement.jpg'
       when 'Auto Insurance' then bg = 'car-insurance.jpg'
     @$scope.backgroundImage = bg
+
+  chooseIconImage: ()->
+    if !@currentTransaction
+      @$scope.iconImage = 'bankfee-icon.png'
+      return
+    iconImage = 'bankfee-icon.png'
+    switch @currentTransaction.categorization
+      when 'Auto Payment' then iconImage = 'car-icon.png'
+      when 'Gas & Fuel' then iconImage = 'gas-icon.png'
+      when 'Check' then iconImage = 'bankfee-icon.png'
+      when 'Shopping' then iconImage = 'food-icon.png'
+      when 'Groceries' then iconImage = 'food-icon.png'
+      when 'Bank Fee' then iconImage = 'bankfee-icon.png'
+      when 'Personal Care' then iconImage = 'bankfee-icon.png'
+      when 'Home Improvement' then iconImage = 'bankfee-icon.jpg'
+      when 'Auto Insurance' then iconImage = 'car-icon.png'
+    @$scope.iconImage = iconImage;
 
   loadSimilar: ()=>
     @$scope.loadingSimilar = true
