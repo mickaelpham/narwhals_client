@@ -46,10 +46,10 @@
         </div>
 
         <div class="is-recurring content padding" ng-show="!isRecurring">
-            <h2>Similar Transactions</h2>
+            <h3>Similar Transactions</h3>
             <div class="list">
                 <a class="item" ng-repeat="transaction in similarTransactions">
-                    Transaction
+                    {{transaction.merchant}}: ${{transaction.amount / 10000}}
                 </a>
             </div>
         </div>

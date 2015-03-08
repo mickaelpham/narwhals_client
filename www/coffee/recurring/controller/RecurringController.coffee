@@ -14,9 +14,8 @@ class RecurringController extends BaseController
   loadSimilar: ()=>
     @$scope.loadingSimilar = true
     @User.getSimilarTransactions(@$rootScope.session_token, @currentTransaction.id).then (result)=>
-      @$scope.similarTransactions = result
+      @$scope.similarTransactions = result.data
       @$scope.loadingSimilar = false
-
 
   showSavings: ()=>
     transactionId = @currentTransaction.id ? '1'
