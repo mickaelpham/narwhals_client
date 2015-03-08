@@ -23,7 +23,6 @@ class IndexController extends BaseController
 
   refresh: ()->
     @loadTransactions()
-    @$scope.$broadcast('scroll.refreshComplete')
 
   loadTransactions: ()=>
     if(!@$rootScope.session_token)
@@ -32,13 +31,10 @@ class IndexController extends BaseController
     @User.getTransactions(@$rootScope.session_token).then (result)=>
       @$scope.transactions = result.data
       @locker.put 'transactions', @$scope.transactions
+      @$scope.$broadcast('scroll.refreshComplete')
 
-  getRandomAmount: ()=>
-    return Math.floor(Math.random() * 5000) / 100
 
   showTransaction: (transaction)->
-    console.log "Current Transaction"
-    console.log transaction
     @$rootScope.currentTransaction = transaction
     @$state.go('recurring')
 

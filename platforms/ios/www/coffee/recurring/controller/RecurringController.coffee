@@ -6,20 +6,12 @@ class RecurringController extends BaseController
   @inject '$scope', '$http', '$scope', '$rootScope', '$stateParams',  '$state',  'locker', 'currentTransaction', 'User', '$ionicViewSwitcher'
 
   initialize: ()->
-    if !@$rootScope.currentTransaction
+    if !@currentTransaction
       @$ionicViewSwitcher.nextDirection 'back'
       @$state.go 'index'
 
-      @$scope.defaultFrequency = 5
-      @$scope.defaultInterval = "Year"
-
-      @$scope.frequencyList = [
-          {text: "Year", value: "Year"},
-          {text: "Month", value: "Month"}
-      ]
-
   showSavings: ()=>
-    transactionId = @$rootScope.currentTransaction.id ? '1'
+    transactionId = @currentTransaction.id ? '1'
     frequency = @$scope.frequency ? 4
     timePeriod = @$scope.timePeriod ? 'week'
     console.log 'ShowSavings'

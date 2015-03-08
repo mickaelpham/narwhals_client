@@ -7718,6 +7718,15 @@ a.button {
 a.waves-effect .waves-ripple {
   z-index: -1; }
 
+.frequency-container {
+  margin: 16px; }
+
+.auth.list label {
+  margin-left: 0px; }
+
+.recurring .spending-bar {
+  height: 40px; }
+
 .narwhals-logo {
   background-image: url(./../img/narwhals.png);
   background-size: contain;
@@ -7741,19 +7750,15 @@ a.waves-effect .waves-ripple {
   height: 180px !important; }
   .recurring .hero.slide-up {
     height: 100%; }
-.recurring .frequency-container {
-  padding-bottom: 10px;
-  padding-left: 16px;
-  padding-right: 16px; }
-  .recurring .frequency-container .frequency-input {
-    background-color: #f7f7f7;
-    border-color: #efefef;
-    border-radius: 3px;
-    border-style: solid;
-    border-width: 1px;
-    padding: 4px; }
-  .recurring .frequency-container .frequency-input.ng-invalid {
-    background-color: #ffcccc; }
+.recurring .frequency-container .frequency-input {
+  background-color: #f7f7f7;
+  border-color: #efefef;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 4px; }
+.recurring .frequency-container .frequency-input.ng-invalid {
+  background-color: #ffcccc; }
 .recurring div.interval-container {
   margin: 16px;
   border-radius: 4px;

@@ -13,22 +13,36 @@
             You spent <span class="amount">$132</span> in the last <span class="timerange">3 months</span>
         </div>
 
-        <h4 class="positive content padding double-padding-x">My Spending</h4>
-
-        <!-- Frequency input -->
-        <div class="frequency-container" name="frequency-container" >
-            <span>I go there</span>
-            <input type="text" class="frequency-input" name="frequency-input" ng-model="defaultFrequency" ng-pattern="/^\d+$/"/>
-            <span>time(s) per</span>
+        <div class="content">
+            <ion-toggle ng-model="isRecurring" >This is a recurring spending</ion-toggle>
         </div>
+        <div class="is-recurring content padding" ng-show="isRecurring">
+            <!-- Frequency select -->
+            <div class="frequency-container" name="frequency-container">
+                <span>I go there</span>
 
-        <!-- Time interval radio options -->
-        <div class="interval-container">
-            <ion-radio ng-repeat="item in frequencyList" ng-value="item.value" name="interval-radio" >
-                {{item.text}}
-            </ion-radio>
+                <select>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option selected>5</option>
+                </select>
+
+                <span>time(s) per</span>
+
+                <select>
+                  <option selected>Week</option>
+                  <option>Month</option>
+                  <option>Year</option>
+                </select>
+            </div>
+
+            <!-- Time interval radio options -->
+            <div class="interval-container">
+                <br>
+                <a class="show-savings button icon icon-right ion-chevron-right" href="#" ng-click="showSavings()">Calculate</a>
+            </div>
         </div>
-
-        <a class="button icon icon-right ion-chevron-right" href="#" ng-click="showSavings()">Calculate</a>
     </div>
 </ion-view>
