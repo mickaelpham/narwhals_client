@@ -6,3 +6,10 @@ tmp/
 platforms/ios/build
 bower_components/
 www/lib
+www/js/narwhal.js
+www/js/narwhal.min.js
+www/css/narwhal.min.css
+www/css/narwhal.css
+platforms/ios/narwhal-client.xcodeproj/project.xcworkspace/xcuserdata/
+platforms/ios/www/js/narwhal.js
+platforms/ios/www/js/narwhal.min.js

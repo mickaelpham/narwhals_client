@@ -7719,15 +7719,18 @@ a.waves-effect .waves-ripple {
   z-index: -1; }
 
 .narwhals-logo {
-  background-image: url(/img/narwhals.png);
+  background-image: url(./../img/narwhals.png);
+  background-size: contain;
   width: 154px;
   height: 228px; }
 
-.login .item .item {
-  background-color: transparent !important;
-  border: none !important; }
-.login .item .item-input {
-  padding: 30px 0 0 !important; }
+.login {
+  height: 100%; }
+  .login .item .item {
+    background-color: transparent !important;
+    border: none !important; }
+  .login .item .item-input {
+    padding: 30px 0 0 !important; }
 
 .recurring .spending-bar {
   background-color: #212121;
@@ -7738,3 +7741,27 @@ a.waves-effect .waves-ripple {
   height: 180px !important; }
   .recurring .hero.slide-up {
     height: 100%; }
+.recurring .frequency-container {
+  padding-bottom: 10px;
+  padding-left: 16px;
+  padding-right: 16px; }
+  .recurring .frequency-container .frequency-input {
+    background-color: #f7f7f7;
+    border-color: #efefef;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    padding: 4px; }
+  .recurring .frequency-container .frequency-input.ng-invalid {
+    background-color: #ffcccc; }
+.recurring div.interval-container {
+  margin: 16px;
+  border-radius: 4px;
+  border-style: solid; }
+  .recurring div.interval-container label {
+    border-color: #efefef;
+    border-radius: 3px;
+    border-style: solid; }
+.recurring a.calculate-button {
+  margin: 14px;
+  padding: 4px; }
