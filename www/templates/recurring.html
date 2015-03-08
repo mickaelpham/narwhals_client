@@ -19,7 +19,7 @@
             <!-- Frequency select -->
             <div class="frequency-container" name="frequency-container">
                 <span>I go there</span>
-                <select>
+                <select ng-model="frequency">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -29,10 +29,10 @@
 
                 <span>time(s) per</span>
 
-                <select>
-                    <option selected>Week</option>
-                    <option>Month</option>
-                    <option>Year</option>
+                <select ng-model="timePeriod">
+                    <option value="week" selected>Week</option>
+                    <option value="month">Month</option>
+                    <option value="year">Year</option>
                 </select>
             </div>
 
