@@ -20,6 +20,7 @@
             <!-- Frequency select -->
             <div class="frequency-container" name="frequency-container">
                 <span>I go there</span>
+
                 <select>
                   <option>1</option>
                   <option>2</option>
@@ -27,17 +28,19 @@
                   <option>4</option>
                   <option selected>5</option>
                 </select>
+
                 <span>time(s) per</span>
+
+                <select>
+                  <option selected>Week</option>
+                  <option>Month</option>
+                  <option>Year</option>
+                </select>
             </div>
 
             <!-- Time interval radio options -->
             <div class="interval-container">
-                <ion-radio ng-repeat="item in intervalList" ng-value="item.value" name="interval-radio" ng-model="defaultInterval">
-                    {{item.text}}
-                </ion-radio>
-
                 <br>
-                
                 <a class="show-savings button icon icon-right ion-chevron-right" href="#" ng-click="showSavings()">Calculate</a>
             </div>
         </div>

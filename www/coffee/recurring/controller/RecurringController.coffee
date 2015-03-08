@@ -10,14 +10,6 @@ class RecurringController extends BaseController
       @$ionicViewSwitcher.nextDirection 'back'
       @$state.go 'index'
 
-    @$scope.defaultInterval = "week"
-
-    @$scope.intervalList = [
-      {text: "Week", value: "week"},
-      {text: "Month", value: "month"},
-      {text: "Year", value: "year"}
-    ]
-
   showSavings: ()=>
     transactionId = @$rootScope.currentTransaction.id ? '1'
     frequency = @$scope.frequency ? 4
