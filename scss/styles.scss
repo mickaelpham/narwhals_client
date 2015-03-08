@@ -33,4 +33,44 @@
       height: 100%;
     }
   }
+
+  // Bar containing input frequency
+  .frequency-container {
+    padding-bottom: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    // Input for frequency number
+    .frequency-input {
+      background-color: $lightGray;
+      border-color: $light;
+      border-radius: 3px;
+      border-style: solid;
+      border-width: 1px;
+      padding: 4px;
+    }
+
+    // Invalid input
+    .frequency-input.ng-invalid {
+      background-color: $invalidInput;
+    }
+  }
+
+  // Div containing interval radio options
+  div.interval-container {
+    margin: 16px;
+    border-radius: 4px;
+    border-style: solid;
+
+    label {
+      border-color: $light;
+      border-radius: 3px;
+      border-style: solid;
+    }
+  }
+
+  a.calculate-button {
+    margin: 14px;
+    padding: 4px;
+  }
 }

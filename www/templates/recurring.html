@@ -8,18 +8,28 @@
                 <h4>Fast Food</h4>
             </div>
         </div>
+        
         <div class="spending-bar">
-            You spend <span class="amount">$ 132</span> in the last <span class="timerange">3 months</span>
+            You spent <span class="amount">$132</span> in the last <span class="timerange">3 months</span>
         </div>
-        <h4 class="positive content padding double-padding-x">My Spending</h4>
-        <span>I go there</span>
 
-        <input type="text"/> times
-        per
-        <ion-radio>Year</ion-radio>
-        <ion-radio>Month</ion-radio>
-        <ion-radio>Week</ion-radio>
-        <ion-radio>Day</ion-radio>
-        <a class="button icon icon-right ion-chevron-right" href="#/report/">Calculate</a>
+        <h4 class="positive content padding double-padding-x">My Spending</h4>
+
+        <!-- Frequency input -->
+        <div class="frequency-container" name="frequency-container" >               
+            <span>I go there</span>
+            <input type="text" class="frequency-input" name="frequency-input" ng-model="defaultFrequency" ng-pattern="/^\d+$/"/>
+            <span>time(s) per</span>
+        </div>        
+
+        <!-- Time interval radio options -->
+        <div class="interval-container">
+            <ion-radio ng-repeat="item in frequencyList" ng-value="item.value" name="interval-radio" >
+                {{item.text}}
+            </ion-radio>
+        </div>
+
+        <!-- Calculate -->
+        <a class="button icon icon-right ion-chevron-right calculate-button" href="#/report/">Calculate</a>
     </div>
 </ion-view>

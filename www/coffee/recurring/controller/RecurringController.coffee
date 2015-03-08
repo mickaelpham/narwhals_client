@@ -9,3 +9,11 @@ class RecurringController extends BaseController
     if !@$rootScope.currentTransaction
       @$ionicViewSwitcher.nextDirection 'back'
       @$state.go 'index'
+
+    @$scope.defaultFrequency = 5
+    @$scope.defaultInterval = "Year"
+
+    @$scope.frequencyList = [
+        {text: "Year", value: "Year"},
+        {text: "Month", value: "Month"}
+    ]
