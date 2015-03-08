@@ -16,7 +16,7 @@ class IndexController extends BaseController
       ionic.DomUtil.ready( ()->
         Mi.motion.fadeSlideInRight({selector: '.animate-fade-slide-in-right > *'})
       )
-      
+
   logout: ()->
     @locker.forget('session_token')
     @$state.go 'login'
@@ -24,11 +24,11 @@ class IndexController extends BaseController
   refresh: ()->
     @loadTransactions()
     @$scope.$broadcast('scroll.refreshComplete')
-    setTimeout(Mi.motion.fadeSlideInRight({
-      selector: '.animate-fade-slide-in-right > *'
-    }), 10)
 
   loadTransactions: ()=>
+    if(!@$rootScope.session_token)
+      @$state.go 'login'
+      return;
     @User.getTransactions(@$rootScope.session_token).then (result)=>
       @$scope.transactions = result.data
       @locker.put 'transactions', @$scope.transactions

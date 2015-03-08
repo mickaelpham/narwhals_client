@@ -259,7 +259,6 @@ Mi = (function() {
                 var delayValue = offset / speed / options.finishDelayThrottle;
                 var delay = parseFloat(delayValue).toFixed(2);
             }
-            console.log(animateSlideInRightDom);
             if ( animateSlideInRightDom.length > 0) {
                 animateSlideInRightDom[0].className += ' done';
             }

@@ -7,6 +7,7 @@ class LoginController extends BaseController
 
   login: ()=>
     @$scope.isLoading = true
+    console.log 'Trying to login'
     @User.login(@$scope.username, @$scope.password).then( (result)=>
       @$scope.isLoading = false
 

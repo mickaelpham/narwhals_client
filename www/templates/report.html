@@ -1,36 +1,11 @@
 <ion-view>
     <ion-content class="has-header">
         <div class="list condensed-space no-padding animate-blinds">
-            <div class="card dark-bg">
+            <div class="card dark-bg" ng-repeat="projection in projections">
                 <a class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse">
-                    <h2>3 times a week</h2>
-
-                    <p>Save up to <strong class="amount">$73.293</strong></p>
+                    <h2>{{projection.frequency}} times a {{ projection.time_period}}</h2>
+                    <p>Save up to <strong class="amount">$ {{ projection.saving / 100000| number:0 }}</strong></p>
                     <img src="./img/toronto.jpg">
-                </a>
-            </div>
-            <div class="card dark-bg">
-                <a class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse">
-                    <h2>2 times a week</h2>
-
-                    <p>Save up to <strong class="amount">$48.293</strong></p>
-                    <img src="./img/new-zealand.jpg">
-                </a>
-            </div>
-            <div class="card energized-bg">
-                <a class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse">
-                    <h2>Once a week</h2>
-
-                    <p>Save up to <strong class="amount">$20.293</strong></p>
-                    <img src="./img/scotland.jpg">
-                </a>
-            </div>
-            <div class="card assertive-bg">
-                <a class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse">
-                    <h2>Never</h2>
-
-                    <p>Save up to <strong class="amount">$3.293</strong></p>
-                    <img src="./img/kyoto.jpg">
                 </a>
             </div>
         </div>

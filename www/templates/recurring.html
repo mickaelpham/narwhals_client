@@ -5,10 +5,10 @@
             <div class="content">
                 <div class="avatar" style="background-image: url('./img/food-icon.png');"></div>
                 <h3><a class="light">{{ currentTransaction.merchant }}</a></h3>
-                <h4>Fast Food</h4>
+                <h4>{{ currentTransaction.categorization }}</h4>
             </div>
         </div>
-        
+
         <div class="spending-bar">
             You spent <span class="amount">$132</span> in the last <span class="timerange">3 months</span>
         </div>
@@ -16,11 +16,11 @@
         <h4 class="positive content padding double-padding-x">My Spending</h4>
 
         <!-- Frequency input -->
-        <div class="frequency-container" name="frequency-container" >               
+        <div class="frequency-container" name="frequency-container" >
             <span>I go there</span>
             <input type="text" class="frequency-input" name="frequency-input" ng-model="defaultFrequency" ng-pattern="/^\d+$/"/>
             <span>time(s) per</span>
-        </div>        
+        </div>
 
         <!-- Time interval radio options -->
         <div class="interval-container">
@@ -29,7 +29,6 @@
             </ion-radio>
         </div>
 
-        <!-- Calculate -->
-        <a class="button icon icon-right ion-chevron-right calculate-button" href="#/report/">Calculate</a>
+        <a class="button icon icon-right ion-chevron-right" href="#" ng-click="showSavings()">Calculate</a>
     </div>
 </ion-view>
