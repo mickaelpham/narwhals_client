@@ -1,7 +1,7 @@
 <ion-view>
 
     <div class="content has-header recurring ionic">
-        <div class="hero has-mask" style="background-image: url('./img/fastfood.jpg');">
+        <div class="hero has-mask" style="background-image: url('./img/fastfood.jpg');" on-swipe-left="showNext()">
             <div class="content">
                 <div class="avatar" style="background-image: url('./img/food-icon.png');"></div>
                 <h3><a class="light">{{ currentTransaction.merchant }}</a></h3>
@@ -16,7 +16,7 @@
         <div class="content">
             <ion-toggle ng-model="isRecurring" >This is a recurring spending</ion-toggle>
         </div>
-        <div class="is-recurring content padding" ng-show="isRecurring">
+        <div class="is-recurring content padding" ng-show="isRecurring" ng-cloak>
             <!-- Frequency select -->
             <div class="frequency-container" name="frequency-container">
                 <span>I go there</span>
@@ -44,5 +44,13 @@
                 <a class="show-savings button icon icon-right ion-chevron-right" href="#" ng-click="showSavings()">Calculate</a>
             </div>
         </div>
-    </div>
+
+        <div class="is-recurring content padding" ng-show="!isRecurring">
+            <h3>Similar Transactions</h3>
+            <div class="list">
+                <a class="item" ng-repeat="transaction in similarTransactions">
+                    {{transaction.merchant}}: ${{transaction.amount / 10000}}
+                </a>
+            </div>
+        </div>
 </ion-view>

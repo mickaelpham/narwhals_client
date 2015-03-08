@@ -9,6 +9,24 @@ class RecurringController extends BaseController
     if !@currentTransaction
       @$ionicViewSwitcher.nextDirection 'back'
       @$state.go 'index'
+    @loadSimilar()
+
+  showNext: ()->
+    transactions = @locker.get 'transactions'
+    if !@currentTransaction
+      return
+    nextTransaction =  transactions[@currentTransaction.next]
+    if nextTransaction
+      @currentTransaction = nextTransaction
+      @$rootScope.currentTransaction = @currentTransaction
+      @loadSimilar()
+
+
+  loadSimilar: ()=>
+    @$scope.loadingSimilar = true
+    @User.getSimilarTransactions(@$rootScope.session_token, @currentTransaction.id).then (result)=>
+      @$scope.similarTransactions = result.data
+      @$scope.loadingSimilar = false
 
   showSavings: ()=>
     transactionId = @currentTransaction.id ? '1'
@@ -19,5 +37,7 @@ class RecurringController extends BaseController
       console.log result
       @$rootScope.projections = result.data.savings_projection
       @locker.put 'projections', result.data.savings_projection
+      @$rootScope.spending = result.data.cost
+      console.log result.data
       @$state.go 'spending'
     )

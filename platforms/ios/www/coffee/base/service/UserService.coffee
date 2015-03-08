@@ -11,7 +11,11 @@ app.factory 'User', ['$http', ($http) ->
       request
 
     getTransactions: (sessionToken) ->
-      request = $http.get 'https://nameless-scrubland-4785.herokuapp.com/v1/transactions', { params: { session_token: sessionToken }}
+      request = $http.get 'https://nameless-scrubland-4785.herokuapp.com/v1/transactions', { params: { session_token: sessionToken, positive: true }}
+      return request
+
+    getSimilarTransactions: (sessionToken, transactionId) ->
+      request = $http.get "https://nameless-scrubland-4785.herokuapp.com/v1/transactions/#{transactionId}/similar", { params: { session_token: sessionToken, positive: true }}
       return request
 
     getSavings: (sessionToken, transactionId, frequency, timePeriod) ->

@@ -12,6 +12,7 @@ app = angular.module('narwhal', [
   'narwhal.spending'
   'ui.router'
   'angular-locker'
+  'angularMoment'
 ])
 
 app.run(($ionicPlatform, $rootScope) ->
