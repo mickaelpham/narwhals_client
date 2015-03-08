@@ -29,9 +29,11 @@
                 <ion-radio ng-repeat="item in frequencyList" ng-value="item.value" name="interval-radio" ng-model="defaultInterval">
                     {{item.text}}
                 </ion-radio>
-            </div>
 
-            <a class="button icon icon-right ion-chevron-right" href="#" ng-click="showSavings()">Calculate</a>
+                <br>
+                
+                <a class="show-savings button icon icon-right ion-chevron-right" href="#" ng-click="showSavings()">Calculate</a>
+            </div>
         </div>
     </div>
 </ion-view>
