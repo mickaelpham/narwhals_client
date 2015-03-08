@@ -17,16 +17,22 @@
             <ion-toggle ng-model="isRecurring" >This is a recurring spending</ion-toggle>
         </div>
         <div class="is-recurring content padding" ng-show="isRecurring">
-            <!-- Frequency input -->
+            <!-- Frequency select -->
             <div class="frequency-container" name="frequency-container">
                 <span>I go there</span>
-                <input type="text" class="frequency-input" name="frequency-input" ng-model="defaultFrequency" ng-pattern="/^\d+$/"/>
+                <select>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option selected>5</option>
+                </select>
                 <span>time(s) per</span>
             </div>
 
             <!-- Time interval radio options -->
             <div class="interval-container">
-                <ion-radio ng-repeat="item in frequencyList" ng-value="item.value" name="interval-radio" ng-model="defaultInterval">
+                <ion-radio ng-repeat="item in intervalList" ng-value="item.value" name="interval-radio" ng-model="defaultInterval">
                     {{item.text}}
                 </ion-radio>
 
