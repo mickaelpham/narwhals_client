@@ -17,5 +17,6 @@
     "gulp-uglify": "^1.1",
     "gulp-util": "^3",
     "shelljs": "^0.3"
-  }
+  },
+  "cordovaPlugins": []
 }
