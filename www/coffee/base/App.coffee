@@ -13,6 +13,7 @@ app = angular.module('narwhal', [
   'ui.router'
   'angular-locker'
   'angularMoment'
+  'ngCordova'
 ])
 
 app.run(($ionicPlatform, $rootScope) ->

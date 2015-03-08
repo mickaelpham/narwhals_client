@@ -27,18 +27,32 @@ class IndexController extends BaseController
       return;
     @User.getTransactions(@$rootScope.session_token).then (result)=>
 
+      imgSrcs = {
+        'Dining' : './img/food-icon.png',
+        'Gas & Fuel' : './img/gas-icon.png',
+        'Check' : '',
+        'Bank Fee' : './img/bankfee-icon.png',
+        'Auto Insurance' : './img/car-icon.png',
+        'Auto Payment' : './img/car-icon.png',
+        'Shopping' : './img/food-icon.png',
+        'Groceries' : './img/food-icon.png',
+        'Personal Care' : ''
+      };
+
       transactions = []
       for transaction, i in result.data
         if i < result.data.length-1
           transaction.next = i+1
         else
           transaction.next = 0
+
+        ///Set the img src///
+        transaction.imgSrc = imgSrcs[transaction.categorization] || './img/bankfee-icon.png'
         transactions.push transaction
 
       @$scope.transactions = transactions
       @locker.put 'transactions', @$scope.transactions
       @$scope.$broadcast('scroll.refreshComplete')
-
 
   showTransaction: (transaction)->
     @$rootScope.currentTransaction = transaction

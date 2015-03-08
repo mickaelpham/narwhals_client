@@ -3,7 +3,7 @@ recurringModule = angular.module 'narwhal.recurring'
 class RecurringController extends BaseController
 
   @register recurringModule
-  @inject '$scope', '$http', '$scope', '$rootScope', '$stateParams',  '$state',  'locker', 'currentTransaction', 'User', '$ionicViewSwitcher'
+  @inject '$scope', '$http', '$ionicPlatform', '$rootScope', '$stateParams',  '$state',  '$window',  'locker', 'currentTransaction', 'User', '$ionicViewSwitcher', '$cordovaSpinnerDialog', '$timeout'
 
   initialize: ()->
     if !@currentTransaction
@@ -65,15 +65,28 @@ class RecurringController extends BaseController
       @calculateYearlySpending()
 
   showSavings: ()=>
-    transactionId = @currentTransaction.id ? '1'
-    frequency = @$scope.frequency ? 4
-    timePeriod = @$scope.timePeriod ? 'week'
-    console.log 'ShowSavings'
-    @User.getSavings(@$rootScope.session_token, transactionId, frequency, timePeriod).then( (result)=>
-      console.log result
-      @$rootScope.projections = result.data.savings_projection
-      @locker.put 'projections', result.data.savings_projection
-      @$rootScope.spending = result.data.cost
-      console.log result.data
-      @$state.go 'spending'
-    )
+    @$ionicPlatform.ready ()=>
+      transactionId = @currentTransaction.id ? '1'
+      frequency = @$scope.frequency ? 4
+      timePeriod = @$scope.timePeriod ? 'week'
+      console.log 'ShowSavings'
+
+      if @$window.plugins && @$window.plugins.spinnerDialog
+        @$cordovaSpinnerDialog.show("Calculating","crunching numbers...", true);
+
+      @User.getSavings(@$rootScope.session_token, transactionId, frequency, timePeriod).then( (result)=>
+        console.log result
+        @$rootScope.projections = result.data.savings_projection
+        @locker.put 'projections', result.data.savings_projection
+        @$rootScope.spending = result.data.cost
+        console.log result.data
+        if @$window.plugins && @$window.plugins.spinnerDialog
+          @$timeout( ()=>
+
+            @$cordovaSpinnerDialog.hide()
+            @$state.go 'spending'
+          , 3000
+          )
+        else
+          @$state.go 'spending'
+      )

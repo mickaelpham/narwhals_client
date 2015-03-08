@@ -28,6 +28,7 @@ var paths = {
         './www/lib/moment/moment.js',
         './www/lib/angular-moment/angular-moment.js',
         './www/lib/angular-locker/src/angular-locker.js',
+        './www/lib/ngCordova/dist/ng-cordova.js',
     ]
 };
 
