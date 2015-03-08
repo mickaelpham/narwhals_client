@@ -2,6 +2,7 @@ app = angular.module 'narwhal'
 
 app.factory 'User', ['$http', ($http) ->
   new class User
+
     constructor: ->
 
     login: (username, password) =>

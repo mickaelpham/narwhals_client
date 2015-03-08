@@ -9,6 +9,7 @@ app = angular.module('narwhal', [
   'narwhal.login'
   'narwhal.report'
   'narwhal.recurring'
+  'narwhal.spending'
   'ui.router'
   'angular-locker'
 ])

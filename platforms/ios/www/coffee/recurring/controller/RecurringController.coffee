@@ -3,14 +3,37 @@ recurringModule = angular.module 'narwhal.recurring'
 class RecurringController extends BaseController
 
   @register recurringModule
-  @inject '$scope', '$http', '$scope', '$rootScope', '$stateParams',  '$state',  'locker', 'currentTransaction', 'User', '$ionicViewSwitcher'
+  @inject '$scope', '$http', '$scope', '$rootScope', '$stateParams',  '$state',  'locker', 'User', '$ionicViewSwitcher'
 
   initialize: ()->
+<<<<<<< HEAD
     if !@currentTransaction
       @$ionicViewSwitcher.nextDirection 'back'
       @$state.go 'index'
 
   showSavings: ()=>
+=======
+    @currentTransaction = @$rootScope.currentTransaction
+    if !@currentTransaction
+
+      @$ionicViewSwitcher.nextDirection 'back'
+      @$state.go 'index'
+
+    @$scope.defaultFrequency = 5
+    @$scope.defaultInterval = "Year"
+
+    @$scope.frequencyList = [
+      {text: "Week", value: "week"},
+      {text: "Month", value: "month"}
+      {text: "Year", value: "year"},
+    ]
+
+  showNext: ()=>
+    console.log "Swipped left!"
+
+  showSavings: ()=>
+    @currentTransaction = @$rootScope.currentTransaction
+>>>>>>> feature(Spending): add new screen
     transactionId = @currentTransaction.id ? '1'
     frequency = @$scope.frequency ? 4
     timePeriod = @$scope.timePeriod ? 'week'
@@ -19,5 +42,8 @@ class RecurringController extends BaseController
       console.log result
       @$rootScope.projections = result.data.savings_projection
       @locker.put 'projections', result.data.savings_projection
-      @$state.go 'report'
+      @$rootScope.spending = result.data.cost
+      console.log "....got spending"
+      console.log @$rootScope.cost
+      @$state.go 'spending'
     )

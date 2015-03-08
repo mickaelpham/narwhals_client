@@ -19,5 +19,5 @@ class RecurringController extends BaseController
       console.log result
       @$rootScope.projections = result.data.savings_projection
       @locker.put 'projections', result.data.savings_projection
-      @$state.go 'report'
+      @$state.go 'spending'
     )

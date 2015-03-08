@@ -1,0 +1,27 @@
+<ion-view>
+    <ion-content class="has-header">
+        <div class="card">
+            <div class="item item-text-wrap">
+                <h2>Holy cow!</h2>
+
+                <h3>You would spend like ${{ spending / 1000000| number:0 }} over the next 10 years!</h3>
+            </div>
+        </div>
+        <div class="content padding">
+            <div class="row">
+                <div class="col col50">
+                    <button class="button button-block button-calm" ui-sref="recurring">
+                        That's fine
+                    </button>
+
+                </div>
+                <div class="col col50">
+                    <button class="button button-block button-positive" ui-sref="report">
+                        What if I cut this?
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </ion-content>
+</ion-view>
