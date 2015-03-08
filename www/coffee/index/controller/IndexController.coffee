@@ -30,6 +30,7 @@ class IndexController extends BaseController
       return;
     @User.getTransactions(@$rootScope.session_token).then (result)=>
       @$scope.transactions = result.data
+      console.log result.data
       @locker.put 'transactions', @$scope.transactions
       @$scope.$broadcast('scroll.refreshComplete')
 
