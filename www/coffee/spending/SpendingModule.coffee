@@ -9,7 +9,9 @@ spendingModule.config ($stateProvider)->
     resolve:
       spending: ['$rootScope', ($rootScope)->
         console.log "Trying to resolve spending variable..."
-        console.log $rootScope
+        if !$rootScope.spending
+          $rootScope.spending = -1896543300
+        console.log "Done. Spending."
         return $rootScope.spending
       ]
   )
