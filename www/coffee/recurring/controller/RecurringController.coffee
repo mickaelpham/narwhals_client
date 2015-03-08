@@ -11,9 +11,9 @@ class RecurringController extends BaseController
       @$state.go 'index'
     @loadSimilar()
 
-  loadSimilar: ()->
+  loadSimilar: ()=>
     @$scope.loadingSimilar = true
-    @User.getSimilarTransactions(@$rootScope.session_token, @currentTransaction.id).then (result)->
+    @User.getSimilarTransactions(@$rootScope.session_token, @currentTransaction.id).then (result)=>
       @$scope.similarTransactions = result
       @$scope.loadingSimilar = false
 
