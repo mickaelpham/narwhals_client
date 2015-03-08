@@ -23,8 +23,8 @@
         </div>
 
         <!-- Time interval radio options -->
-        <div class="interval-container">
-            <ion-radio ng-repeat="item in frequencyList" ng-value="item.value" name="interval-radio" >
+        <div class="interval-container" >
+            <ion-radio ng-repeat="item in frequencyList" ng-value="item.value" ng-model="defaultInterval" name="interval-radio" >
                 {{item.text}}
             </ion-radio>
         </div>
