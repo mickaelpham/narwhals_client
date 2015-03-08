@@ -25,6 +25,8 @@ var paths = {
     jsImports: [
         './www/js/vendor/material-ionic.js',
         './www/lib/Waves/src/js/waves.js',
+        './www/lib/moment/moment.js',
+        './www/lib/angular-moment/angular-moment.js',
         './www/lib/angular-locker/src/angular-locker.js',
     ]
 };
