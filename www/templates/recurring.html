@@ -1,7 +1,7 @@
 <ion-view>
 
     <div class="content has-header recurring ionic">
-        <div class="hero has-mask" style="background-image: url('./img/fastfood.jpg');" on-swipe-left="showNext()">
+        <div class="hero has-mask" ng-style="{'background-image':'url(./img/'+backgroundImage+')'}" on-swipe-left="showNext()">
             <div class="content">
                 <div class="avatar" style="background-image: url('./img/food-icon.png');"></div>
                 <h3><a class="light">{{ currentTransaction.merchant }}</a></h3>
@@ -14,27 +14,26 @@
         </div>
 
         <div class="content">
-            <ion-toggle ng-model="isRecurring" >This is a recurring expense</ion-toggle>
+            <ion-toggle ng-model="isRecurring">This is a recurring expense</ion-toggle>
         </div>
         <div class="is-recurring content padding" ng-show="isRecurring" ng-cloak>
             <!-- Frequency select -->
             <div class="frequency-container" name="frequency-container">
                 <span>I go there</span>
-
                 <select>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option selected>5</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option selected>5</option>
                 </select>
 
                 <span>time(s) per</span>
 
                 <select>
-                  <option selected>Week</option>
-                  <option>Month</option>
-                  <option>Year</option>
+                    <option selected>Week</option>
+                    <option>Month</option>
+                    <option>Year</option>
                 </select>
             </div>
 
@@ -47,6 +46,7 @@
 
         <div class="is-recurring content padding" ng-show="!isRecurring">
             <h3>Similar Transactions</h3>
+
             <div class="list" id="similarTransactionListContainer">
                 <a class="item" ng-repeat="transaction in similarTransactions">
                     {{transaction.merchant}}: ${{transaction.amount / -10000}}
