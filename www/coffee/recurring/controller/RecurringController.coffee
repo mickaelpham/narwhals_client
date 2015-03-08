@@ -7,12 +7,15 @@ class RecurringController extends BaseController
 
   initialize: ()->
     if !@currentTransaction
-      @$ionicViewSwitcher.nextDirection 'back'
-      @$state.go 'index'
+      if @$rootScope.currentTransaction
+        @currentTransaction = @$rootScope.currentTransaction
+      else
+        @$ionicViewSwitcher.nextDirection 'back'
+        @$state.go 'index'
+    @loadSimilar()
     @choseBackgroundImage()
     @chooseIconImage()
     @calculateYearlySpending()
-    @loadSimilar()
 
   showNext: ()->
     transactions = @locker.get 'transactions'
@@ -26,6 +29,7 @@ class RecurringController extends BaseController
       @loadSimilar()
       @choseBackgroundImage()
       @calculateYearlySpending()
+      @chooseIconImage()
 
   calculateYearlySpending: ()->
     if !@currentTransaction
